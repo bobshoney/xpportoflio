@@ -1,0 +1,114 @@
+:root {
+    --xp-blue: #245EDC;
+    --xp-blue-light: #6B9FE4;
+    --xp-blue-dark: #0A246A;
+    --xp-green: #3C8E28;
+    --xp-window-bg: #ECE9D8;
+    --xp-taskbar-bg: #245EDC;
+    --xp-text-color: #000000;
+    --xp-border-light: #FFFFFF;
+    --xp-border-dark: #808080;
+    --xp-shadow: rgba(0, 0, 0, 0.3);
+    --xp-gradient-start: #E8F4E8;
+    --xp-gradient-end: #C0E4C0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tahoma', 'Verdana', sans-serif;
+    font-size: 11px;
+    overflow: hidden;
+    user-select: none;
+    background: #000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1e3a8a 0%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.boot-content {
+    text-align: center;
+}
+
+.xp-logo {
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(to right, #4ade80, #22c55e);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 8px;
+}
+
+.loading-text {
+    color: white;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/images/bliss.jpg') center center cover no-repeat;
+    background-size: cover;
+}
+
+.windows-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 30px);
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .desktop {
+        background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+    }
+    
+    .xp-logo {
+        font-size: 32px;
+    }
+    
+    .loading-bar {
+        width: 200px;
+    }
+}

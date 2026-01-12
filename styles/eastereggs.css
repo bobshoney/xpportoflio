@@ -1,0 +1,425 @@
+.bsod {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0000AA;
+    color: white;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    font-size: 14px;
+    padding: 50px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.bsod h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bsod-content {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.bsod-content p {
+    margin-bottom: 15px;
+}
+
+.bsod-content pre {
+    background: #000088;
+    padding: 10px;
+    border: 1px solid #3333CC;
+    margin: 20px 0;
+    font-size: 12px;
+}
+
+.clippy {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background: white;
+    border: 2px solid var(--xp-blue-light);
+    border-radius: 10px 10px 0 10px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 10002;
+    animation: popIn 0.3s ease;
+    max-width: 300px;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.clippy-icon {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.clippy-content {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.clippy-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.clippy-button {
+    padding: 5px 15px;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.clippy-button:hover {
+    background: linear-gradient(to bottom, var(--xp-blue-light), var(--xp-blue));
+    color: white;
+}
+
+.task-manager {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: var(--xp-window-bg);
+    border: 1px solid var(--xp-border-dark);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 99998;
+    font-size: 11px;
+}
+
+.task-manager-header {
+    background: linear-gradient(to bottom, #3b82f6, #1e40af);
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.task-manager-tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-manager-tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    background: #e5e5e5;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: 2px;
+}
+
+.task-manager-tab.active {
+    background: white;
+    border-bottom: 1px solid white;
+    margin-bottom: -1px;
+}
+
+.task-manager-content {
+    padding: 15px;
+    background: white;
+}
+
+.task-manager-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.task-manager-table th,
+.task-manager-table td {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-manager-table th {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.task-manager-stats {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    font-size: 10px;
+}
+
+.task-manager-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-top: 1px solid #999;
+}
+
+.command-prompt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: black;
+    border: 2px solid #999;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 99998;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    font-size: 12px;
+    color: #CCC;
+    display: flex;
+    flex-direction: column;
+}
+
+.command-prompt-titlebar {
+    background: #000;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.command-prompt-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.command-prompt-input {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: #000;
+    border-top: 1px solid #333;
+}
+
+.command-prompt-input span {
+    margin-right: 5px;
+}
+
+.command-prompt-input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+}
+
+.windows-update {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border: 1px solid var(--xp-border-dark);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 99998;
+    font-size: 11px;
+}
+
+.windows-update-header {
+    background: linear-gradient(to bottom, #3b82f6, #1e40af);
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.windows-update-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.windows-update-content {
+    padding: 20px;
+}
+
+.windows-update-progress {
+    margin: 15px 0;
+}
+
+.windows-update-bar {
+    width: 100%;
+    height: 20px;
+    background: #e5e5e5;
+    border: 1px solid #999;
+    overflow: hidden;
+}
+
+.windows-update-progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #4ade80, #22c55e);
+    width: 80%;
+    transition: width 0.3s ease;
+}
+
+.windows-update-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-top: 1px solid #999;
+}
+
+.run-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: var(--xp-window-bg);
+    border: 1px solid var(--xp-border-dark);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 99998;
+    font-size: 11px;
+}
+
+.run-dialog-header {
+    background: linear-gradient(to bottom, #3b82f6, #1e40af);
+    color: white;
+    padding: 5px 10px;
+}
+
+.run-dialog-content {
+    padding: 15px;
+}
+
+.run-dialog-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.run-dialog-content input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.run-dialog-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-top: 1px solid #999;
+}
+
+.solitaire-game,
+.minesweeper-game {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #008000;
+    border: 2px solid #006400;
+    padding: 20px;
+    z-index: 99998;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.notification {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background: linear-gradient(to bottom, #fff3cd, #ffc107);
+    border: 1px solid #999;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10003;
+    font-size: 11px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .bsod {
+        padding: 20px;
+        font-size: 12px;
+    }
+    
+    .bsod h1 {
+        font-size: 18px;
+    }
+    
+    .clippy {
+        bottom: 80px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .task-manager {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .command-prompt {
+        width: 90%;
+        height: 300px;
+    }
+    
+    .windows-update {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .run-dialog {
+        width: 90%;
+        max-width: 300px;
+    }
+}

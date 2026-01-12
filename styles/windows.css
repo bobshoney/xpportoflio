@@ -1,0 +1,230 @@
+.window {
+    position: absolute;
+    background: var(--xp-window-bg);
+    border: 1px solid var(--xp-border-dark);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    min-height: 200px;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+}
+
+.window.maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 30px) !important;
+    border-radius: 0;
+}
+
+.window.minimized {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.window-titlebar {
+    display: flex;
+    align-items: center;
+    padding: 4px 6px;
+    background: linear-gradient(to bottom, var(--xp-blue-light), var(--xp-blue));
+    border-bottom: 1px solid var(--xp-border-dark);
+    cursor: move;
+    user-select: none;
+}
+
+.window-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.window-title {
+    flex: 1;
+    color: white;
+    font-size: 11px;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.window-control {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.window-control.minimize {
+    background: linear-gradient(to bottom, #4ade80, #22c55e);
+}
+
+.window-control.maximize {
+    background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+}
+
+.window-control.close {
+    background: linear-gradient(to bottom, #f87171, #dc2626);
+}
+
+.window-control:hover {
+    filter: brightness(1.1);
+}
+
+.window-control:active {
+    filter: brightness(0.9);
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.window-menu {
+    display: flex;
+    gap: 10px;
+    padding: 2px 8px;
+    background: var(--xp-window-bg);
+    border-bottom: 1px solid #ccc;
+    font-size: 11px;
+}
+
+.window-menu-item {
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.window-menu-item:hover {
+    background: var(--xp-blue-light);
+    color: white;
+    border-radius: 2px;
+}
+
+.window-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    background: linear-gradient(to bottom, #ffffff, var(--xp-window-bg));
+    border-bottom: 1px solid #ccc;
+}
+
+.toolbar-button {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 6px;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.toolbar-button:hover {
+    background: linear-gradient(to bottom, var(--xp-blue-light), var(--xp-blue));
+    color: white;
+    border-color: var(--xp-blue-dark);
+}
+
+.toolbar-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.window-content {
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+    background: white;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.window-statusbar {
+    display: flex;
+    align-items: center;
+    padding: 2px 8px;
+    background: linear-gradient(to bottom, #e5e5e5, #d4d4d4);
+    border-top: 1px solid #999;
+    font-size: 10px;
+    color: #666;
+}
+
+.window-statusbar span {
+    flex: 1;
+}
+
+.window-address-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.address-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.address-input {
+    flex: 1;
+    padding: 3px 6px;
+    border: 1px solid #999;
+    font-size: 11px;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.address-button {
+    padding: 3px 10px;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.address-button:hover {
+    background: linear-gradient(to bottom, var(--xp-blue-light), var(--xp-blue));
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .window {
+        min-width: 250px;
+        min-height: 180px;
+    }
+    
+    .window-titlebar {
+        padding: 3px 5px;
+    }
+    
+    .window-title {
+        font-size: 10px;
+    }
+    
+    .window-control {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+    
+    .window-content {
+        padding: 8px;
+        font-size: 10px;
+    }
+}

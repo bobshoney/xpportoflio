@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Moure - Windows XP Portfolio</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/desktop.css">
+    <link rel="stylesheet" href="styles/taskbar.css">
+    <link rel="stylesheet" href="styles/startmenu.css">
+    <link rel="stylesheet" href="styles/windows.css">
+    <link rel="stylesheet" href="styles/eastereggs.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-content">
+            <div class="xp-logo">Microsoft Windows XP</div>
+            <div class="loading-bar">
+                <div class="progress" id="boot-progress"></div>
+            </div>
+            <div class="loading-text" id="boot-text">Loading Bob's IT expertise...</div>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div id="desktop" class="desktop hidden">
+        <!-- Desktop Icons -->
+        <div id="desktop-icons"></div>
+
+        <!-- Windows Container -->
+        <div id="windows-container"></div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar" class="taskbar hidden">
+        <div class="start-button" id="start-button">
+            <img src="assets/icons/windows-xp.svg" alt="Start" class="start-icon">
+            <span>start</span>
+        </div>
+        <div class="quick-launch">
+            <div class="quick-launch-icon" data-window="ie" title="Internet Explorer">
+                <img src="assets/icons/ie.svg" alt="IE">
+            </div>
+            <div class="quick-launch-icon" data-window="notepad" title="Notepad">
+                <img src="assets/icons/notepad.svg" alt="Notepad">
+            </div>
+        </div>
+        <div class="taskbar-programs" id="taskbar-programs"></div>
+        <div class="system-tray">
+            <div class="tray-icon" id="network-icon" title="Connected to Bob's Professional Network">
+                <img src="assets/icons/network.svg" alt="Network">
+            </div>
+            <div class="tray-icon" id="volume-icon" title="Volume: 100%">
+                <img src="assets/icons/volume.svg" alt="Volume">
+            </div>
+            <div class="clock" id="clock" title="August 24, 2001"></div>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="start-menu" class="start-menu hidden">
+        <div class="start-menu-header">
+            <div class="user-avatar">
+                <img src="assets/icons/user.svg" alt="Bob">
+            </div>
+            <div class="user-name">Bob Moure</div>
+        </div>
+        <div class="start-menu-content">
+            <div class="pinned">
+                <div class="section-title">Pinned</div>
+                <div class="menu-item" data-action="ie">
+                    <img src="assets/icons/ie.svg" alt="IE">
+                    <span>Internet Explorer</span>
+                </div>
+                <div class="menu-item" data-action="notepad">
+                    <img src="assets/icons/notepad.svg" alt="Notepad">
+                    <span>Notepad</span>
+                </div>
+                <div class="menu-item" data-action="cmd">
+                    <img src="assets/icons/cmd.svg" alt="Command Prompt">
+                    <span>Command Prompt</span>
+                </div>
+                <div class="menu-item" data-action="contact">
+                    <img src="assets/icons/outlook.svg" alt="Outlook">
+                    <span>Outlook Express</span>
+                </div>
+            </div>
+            <div class="all-programs">
+                <div class="section-title">All Programs</div>
+                <div class="menu-item" data-action="my-computer">
+                    <img src="assets/icons/my-computer.svg" alt="My Computer">
+                    <span>My Computer</span>
+                </div>
+                <div class="menu-item" data-action="resume">
+                    <img src="assets/icons/my-documents.svg" alt="Resume">
+                    <span>Resume</span>
+                </div>
+                <div class="menu-item" data-action="skills">
+                    <img src="assets/icons/control-panel.svg" alt="Skills">
+                    <span>Add/Remove Skills</span>
+                </div>
+                <div class="menu-item" data-action="projects">
+                    <img src="assets/icons/my-pictures.svg" alt="Projects">
+                    <span>My Projects</span>
+                </div>
+                <div class="menu-item" data-action="experience">
+                    <img src="assets/icons/my-network.svg" alt="Experience">
+                    <span>My Network Places</span>
+                </div>
+            </div>
+        </div>
+        <div class="start-menu-footer">
+            <button class="logoff">Log Off</button>
+            <button class="shutdown">Turn Off Computer</button>
+        </div>
+    </div>
+
+    <!-- Sound Player (Hidden) -->
+    <audio id="startup-sound" src="assets/sounds/startup.wav"></audio>
+    <audio id="click-sound" src="assets/sounds/click.wav"></audio>
+    <audio id="error-sound" src="assets/sounds/error.wav"></audio>
+    <audio id="notify-sound" src="assets/sounds/notify.wav"></audio>
+    <audio id="minimize-sound" src="assets/sounds/minimize.wav"></audio>
+    <audio id="maximize-sound" src="assets/sounds/maximize.wav"></audio>
+
+    <script src="scripts/bobData.js"></script>
+    <script src="scripts/windowManager.js"></script>
+    <script src="scripts/soundManager.js"></script>
+    <script src="scripts/eastereggs.js"></script>
+    <script src="scripts/bootScreen.js"></script>
+    <script src="scripts/desktop.js"></script>
+    <script src="scripts/taskbar.js"></script>
+    <script src="scripts/startmenu.js"></script>
+    <script src="scripts/clippy.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
