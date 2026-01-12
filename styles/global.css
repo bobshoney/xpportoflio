@@ -86,7 +86,8 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('../assets/images/bliss.jpg') center center cover no-repeat;
+    background: url('../assets/images/bliss.jpg') center center cover no-repeat,
+                linear-gradient(to bottom, #87CEEB 0%, #4A90D9 30%, #3B82F6 50%, #2E7D32 70%, #228B22 100%);
     background-size: cover;
 }
 
